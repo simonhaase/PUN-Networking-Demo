@@ -18,12 +18,12 @@ public class CharacterController2 : MonoBehaviour
     private FPSAnimation2 fpsAnim;
     private PhotonView PV;
     private float threshold = 0.01f;
+    public float maxSpeed;
 
 
     public float counterMovement = 0.175f;
     public float moveSpeed = 4500;
 
-    //public PlayerInput playerInput;
     public Inputsys controls;
 
     private void Awake()
@@ -131,13 +131,20 @@ public class CharacterController2 : MonoBehaviour
 
         Vector2 mag = FindVelRelativeToLook();
         float xMag = mag.x, yMag = mag.y;
+        float maxSpeed = this.maxSpeed;
 
         CounterMovement(dir.z, dir.x, mag);
 
         rb.AddForce(transform.forward * dir.x * moveforce);
         rb.AddForce(transform.right * dir.z * moveforce);
+    }
 
-        //transform.Translate(dir);
+    private void FixedUpdate()
+    {
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
     }
 
 }
