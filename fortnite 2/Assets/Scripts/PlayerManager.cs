@@ -31,7 +31,7 @@ public class PlayerManager : MonoBehaviour
         }
         else if (!PV.IsMine)
         {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerEnemy"), new Vector3(0f, 8f, 0f), Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player3rd"), new Vector3(0f, 8f, 0f), Quaternion.identity);
         }
     }
     void CreateControllerEnemy()
@@ -42,7 +42,7 @@ public class PlayerManager : MonoBehaviour
         }
         else if (!PV.IsMine)
         {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerEnemy"), new Vector3(0f, 8f, 0f), Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player3rd"), new Vector3(0f, 8f, 0f), Quaternion.identity);
         }
     }
 }

@@ -9,6 +9,7 @@ public class FPSAnimation2 : MonoBehaviour
 {
     private GameObject handL;
     private Animator anim;
+    public Animator enemyanim;
     private AnimatorStateInfo stateInfo;
 
     private ParticleSystem smoke;
@@ -28,12 +29,16 @@ public class FPSAnimation2 : MonoBehaviour
     public int curmuniton;
 
     void Start()
-    {
-        anim = gameObject.GetComponent<Animator>();
+    {        
         PV = gameObject.GetComponentInParent<PhotonView>();
         if (!PV.IsMine)
         {
+            anim = gameObject.GetComponentInChildren<Animator>();
             this.enabled = false;
+        }
+        else
+        {
+            anim = gameObject.GetComponent<Animator>();
         }
 
         shoot = gameObject.GetComponent<AudioSource>();

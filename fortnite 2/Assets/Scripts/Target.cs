@@ -2,28 +2,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 public class Target : MonoBehaviour
 {
     public float health = 50f;
     public GameObject hitParticle;
     private MeshRenderer mesh;
+    private PhotonView PV;
 
     void Start()
     {
-
+        PV = GetComponent<PhotonView>();
         mesh = GetComponent<MeshRenderer>();
     }
+
+    [PunRPC]
     public void TakeDamage(float amount)
     {
         health -= amount;
         if (health <= 0f)
         {
-            Die();
+            if (PV.IsMine)
+            {
+                Debug.Log("Boom");
+                PV.RPC("RPC_Die", RpcTarget.All);
+                //Die();
+            }
         }
     }
 
-    void Die()
+    [PunRPC]
+    void RPC_Die()
     {
         ParticlesExplosion();
         Destroy(mesh);

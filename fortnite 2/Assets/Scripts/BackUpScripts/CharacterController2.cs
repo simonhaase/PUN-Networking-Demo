@@ -38,8 +38,8 @@ public class CharacterController2 : MonoBehaviour
 
     private void OnEnable()
     {
-        PV = GetComponent<PhotonView>();
-        rb = GetComponent<Rigidbody>();
+        PV = GetComponentInParent<PhotonView>();
+        rb = GetComponentInParent<Rigidbody>();
         if (!PV.IsMine)
         {
             Destroy(GetComponent<PlayerInput>());
