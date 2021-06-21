@@ -115,8 +115,8 @@ public class FPSAnimation : MonoBehaviour
 
             if (target != null)
             {
-                target.ParticleHit(hit.point);
-                target.TakeDamage(damage);
+                //target.ParticleHit(hit.point);
+                //target.TakeDamage(damage);
             }
         }
     }

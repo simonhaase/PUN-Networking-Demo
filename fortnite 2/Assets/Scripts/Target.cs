@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-public class Target : MonoBehaviour
+public class Target : MonoBehaviour, IDamageable, ISpawnParticles
 {
     public float health = 50f;
     public GameObject hitParticle;
@@ -21,13 +21,8 @@ public class Target : MonoBehaviour
     {
         health -= amount;
         if (health <= 0f)
-        {
-            if (PV.IsMine)
-            {
-                Debug.Log("Boom");
-                PV.RPC("RPC_Die", RpcTarget.All);
-                //Die();
-            }
+        {            
+            PV.RPC("RPC_Die", RpcTarget.All);           
         }
     }
 
@@ -49,18 +44,18 @@ public class Target : MonoBehaviour
             p.Play();
         }
     }
-    public void ParticleHit(Vector3 hitpos)
+    public void SpawnParticles(Vector3 hitpos)
     {
         Instantiate(hitParticle, transform, false);
 
         if (hitParticle.GetComponent<ParticleSystem>())
         {
+            Debug.Log("particle found");
             var ps = hitParticle.GetComponent<ParticleSystem>();
             var hitp = hitParticle.GetComponent<HitParticle>();
             hitp.position = transform.InverseTransformPoint(hitpos);
             hitp.SetHitPosition();
             hitp.PlayParticles();
         }
-        Debug.Log("Spark");
     }
 }
