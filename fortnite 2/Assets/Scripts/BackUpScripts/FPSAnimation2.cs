@@ -108,11 +108,8 @@ public class FPSAnimation2 : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Target target = hit.transform.GetComponent<Target>();
-            if (target == null)
-                return;
-            target.GetComponent<IDamageable>()?.TakeDamage(damage);
-            target.GetComponent<ISpawnParticles>()?.SpawnParticles(hit.point);
+            hit.collider?.GetComponent<IDamageable>()?.TakeDamage(damage);
+            hit.collider?.GetComponent<ISpawnParticles>()?.SpawnParticles(hit.point);
 
             //target.ParticleHit(hit.point);
             //target.TakeDamage(damage);

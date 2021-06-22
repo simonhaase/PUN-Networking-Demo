@@ -5,7 +5,9 @@ ScriptsOnlyBuild:
     - CharacterController
     - CharacterController2
     - FPSAnimation2
+    - GunInfo
     - HitParticle
+    - Item
     - Launcher
     - Menu
     - MenuManager
@@ -47,6 +49,10 @@ ScriptsOnlyBuild:
     Unity.Postprocessing.Runtime.dll:
     - UnityEngine.Rendering.PostProcessing.PostProcessLayer
     - UnityEngine.Rendering.PostProcessing.PostProcessResources
+    Unity.ProBuilder.Editor.dll:
+    - UnityEditor.ProBuilder.EditorToolbar
+    - UnityEditor.ProBuilder.MaterialPalette
+    - UnityEditor.ProBuilder.ProBuilderEditor
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -113,25 +119,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1584}
     - Class: 114
-      Script: {instanceID: 2764}
+      Script: {instanceID: 2766}
     - Class: 114
-      Script: {instanceID: 2912}
+      Script: {instanceID: 2914}
     - Class: 114
-      Script: {instanceID: 3118}
+      Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3282}
+      Script: {instanceID: 3284}
     - Class: 114
-      Script: {instanceID: 3374}
+      Script: {instanceID: 3376}
     - Class: 114
-      Script: {instanceID: 3834}
+      Script: {instanceID: 3836}
     - Class: 114
-      Script: {instanceID: 4308}
+      Script: {instanceID: 4310}
     - Class: 114
-      Script: {instanceID: 4728}
+      Script: {instanceID: 4730}
     - Class: 114
-      Script: {instanceID: 4772}
+      Script: {instanceID: 4774}
     - Class: 114
-      Script: {instanceID: 5260}
+      Script: {instanceID: 5262}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -224,91 +230,97 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1968}
     - Class: 114
-      Script: {instanceID: 2320}
+      Script: {instanceID: 2322}
     - Class: 114
-      Script: {instanceID: 2356}
+      Script: {instanceID: 2358}
     - Class: 114
-      Script: {instanceID: 2458}
+      Script: {instanceID: 2460}
     - Class: 114
-      Script: {instanceID: 2516}
+      Script: {instanceID: 2518}
     - Class: 114
-      Script: {instanceID: 2606}
+      Script: {instanceID: 2608}
     - Class: 114
-      Script: {instanceID: 2764}
+      Script: {instanceID: 2766}
     - Class: 114
-      Script: {instanceID: 2912}
+      Script: {instanceID: 2914}
     - Class: 114
-      Script: {instanceID: 2964}
+      Script: {instanceID: 2966}
     - Class: 114
-      Script: {instanceID: 3032}
+      Script: {instanceID: 3034}
     - Class: 114
-      Script: {instanceID: 3118}
+      Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3250}
+      Script: {instanceID: 3252}
     - Class: 114
-      Script: {instanceID: 3282}
+      Script: {instanceID: 3284}
     - Class: 114
-      Script: {instanceID: 3364}
+      Script: {instanceID: 3366}
     - Class: 114
-      Script: {instanceID: 3374}
-    - Class: 114
-      Script: {instanceID: 3380}
+      Script: {instanceID: 3376}
     - Class: 114
       Script: {instanceID: 3382}
     - Class: 114
-      Script: {instanceID: 3442}
+      Script: {instanceID: 3384}
     - Class: 114
-      Script: {instanceID: 3498}
+      Script: {instanceID: 3444}
     - Class: 114
-      Script: {instanceID: 3566}
+      Script: {instanceID: 3500}
     - Class: 114
-      Script: {instanceID: 3872}
+      Script: {instanceID: 3568}
     - Class: 114
-      Script: {instanceID: 3888}
+      Script: {instanceID: 3874}
     - Class: 114
-      Script: {instanceID: 4006}
+      Script: {instanceID: 3890}
     - Class: 114
-      Script: {instanceID: 4064}
+      Script: {instanceID: 4008}
     - Class: 114
-      Script: {instanceID: 4082}
+      Script: {instanceID: 4066}
     - Class: 114
-      Script: {instanceID: 4308}
+      Script: {instanceID: 4084}
     - Class: 114
-      Script: {instanceID: 4466}
+      Script: {instanceID: 4310}
     - Class: 114
-      Script: {instanceID: 4472}
+      Script: {instanceID: 4468}
     - Class: 114
-      Script: {instanceID: 4508}
+      Script: {instanceID: 4474}
     - Class: 114
-      Script: {instanceID: 4702}
+      Script: {instanceID: 4510}
     - Class: 114
-      Script: {instanceID: 4772}
+      Script: {instanceID: 4704}
     - Class: 114
-      Script: {instanceID: 4792}
+      Script: {instanceID: 4774}
     - Class: 114
-      Script: {instanceID: 4890}
+      Script: {instanceID: 4794}
     - Class: 114
-      Script: {instanceID: 4912}
+      Script: {instanceID: 4892}
     - Class: 114
-      Script: {instanceID: 5010}
+      Script: {instanceID: 4914}
     - Class: 114
-      Script: {instanceID: 5260}
+      Script: {instanceID: 5012}
     - Class: 114
       Script: {instanceID: 5262}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5264}
     - Class: 114
-      Script: {instanceID: 5456}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 5534}
+      Script: {instanceID: 5458}
     - Class: 114
-      Script: {instanceID: 5688}
+      Script: {instanceID: 5536}
     - Class: 114
-      Script: {instanceID: 5788}
+      Script: {instanceID: 5690}
     - Class: 114
-      Script: {instanceID: 5824}
+      Script: {instanceID: 5790}
     - Class: 114
-      Script: {instanceID: 47934}
+      Script: {instanceID: 5826}
+    - Class: 114
+      Script: {instanceID: 21840}
+    - Class: 114
+      Script: {instanceID: 36332}
+    - Class: 114
+      Script: {instanceID: 52540}
+    - Class: 114
+      Script: {instanceID: 54962}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2540,6 +2552,78 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: FPSCounter
+  - hash:
+      serializedVersion: 2
+      Hash: e9389e944eb81a3a9df56fcdb09ce6a9
+    assemblyName: Unity.ProBuilder.dll
+    namespaceName: UnityEngine.ProBuilder
+    className: ColliderBehaviour
+  - hash:
+      serializedVersion: 2
+      Hash: 9c7c87712e298256d276eb96e02a57b1
+    assemblyName: Unity.ProBuilder.dll
+    namespaceName: UnityEngine.ProBuilder
+    className: PreferenceDictionary
+  - hash:
+      serializedVersion: 2
+      Hash: d6a8e9bec3160a152b9b2710593d3caa
+    assemblyName: Unity.ProBuilder.dll
+    namespaceName: UnityEngine.ProBuilder
+    className: ColorPalette
+  - hash:
+      serializedVersion: 2
+      Hash: 0394e9f99235a3e22eec8b7647f06b60
+    assemblyName: Unity.ProBuilder.Editor.dll
+    namespaceName: UnityEditor.ProBuilder
+    className: MaterialPalette
+  - hash:
+      serializedVersion: 2
+      Hash: 301f4da7cc3b301c161d089f9d22efed
+    assemblyName: Unity.ProBuilder.dll
+    namespaceName: UnityEngine.ProBuilder
+    className: Entity
+  - hash:
+      serializedVersion: 2
+      Hash: f6633ace6e530c0000f2ac6da4269c52
+    assemblyName: Unity.ProBuilder.dll
+    namespaceName: UnityEngine.ProBuilder
+    className: PolyShape
+  - hash:
+      serializedVersion: 2
+      Hash: 32f6d1d5a09e5c94c633a32edd3e6836
+    assemblyName: Unity.ProBuilder.dll
+    namespaceName: UnityEngine.ProBuilder
+    className: BezierShape
+  - hash:
+      serializedVersion: 2
+      Hash: 05655f7deb066a961c41619ac9e98263
+    assemblyName: Unity.ProBuilder.dll
+    namespaceName: UnityEngine.ProBuilder
+    className: ProBuilderMesh
+  - hash:
+      serializedVersion: 2
+      Hash: e9389e944eb81a3a9df56fcdb09ce6a9
+    assemblyName: Unity.ProBuilder.dll
+    namespaceName: UnityEngine.ProBuilder
+    className: TriggerBehaviour
+  - hash:
+      serializedVersion: 2
+      Hash: 97ef6bf4e3bc4048120649a444e03eb5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GunInfo
+  - hash:
+      serializedVersion: 2
+      Hash: 1a286079cf1647bc90669bb8cf035be6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ItemInfo
+  - hash:
+      serializedVersion: 2
+      Hash: 07eb88ee94ce3ac5d48345fb3d2c8d66
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Item
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
