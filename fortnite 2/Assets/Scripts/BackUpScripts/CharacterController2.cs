@@ -43,7 +43,7 @@ public class CharacterController2 : MonoBehaviour
         if (!PV.IsMine)
         {
             Destroy(GetComponent<PlayerInput>());
-            Destroy(GetComponentInChildren<Camera>().gameObject);
+            GetComponentInChildren<Camera>().enabled = false;
             Destroy(rb);
             this.enabled = false;
             return;
@@ -141,6 +141,8 @@ public class CharacterController2 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!PV.IsMine)
+            return;
         if (rb.velocity.magnitude > maxSpeed)
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;

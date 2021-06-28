@@ -105,6 +105,8 @@ public class FPSAnimation2 : MonoBehaviour
 
     void Shoot()
     {
+        if (!PV.IsMine) return; //Only Player can shoot and inflict damage. gets synced over network
+
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {

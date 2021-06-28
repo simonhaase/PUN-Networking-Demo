@@ -42,7 +42,7 @@ public class CharacterController : MonoBehaviour
         if (!PV.IsMine)
         {
             Destroy(GetComponent<PlayerInput>());
-            Destroy(GetComponentInChildren<Camera>().gameObject);
+            GetComponentInChildren<Camera>().enabled = false;
             this.enabled = false;
             return;
         }

@@ -17,11 +17,12 @@ public class CameraController2 : MonoBehaviour
     public float xRotation;
     public Transform playerbody;
     private Inputsys controls;
+    private PhotonView PV;
 
 
     private void Awake()
     {
-        var PV = GetComponentInParent<PhotonView>();
+        PV = GetComponentInParent<PhotonView>();
         if (!PV.IsMine)
         {
             this.enabled = false;
@@ -34,11 +35,13 @@ public class CameraController2 : MonoBehaviour
 
     private void OnEnable()
     {
-        controls.Enable();
+        if (!PV.IsMine) return;
+            controls.Enable();
     }
     private void OnDisable()
     {
-        controls.Disable();
+        if (!PV.IsMine) return;
+            controls.Disable();
     }
 
     void ChangeCamHor(Vector2 mouse)
