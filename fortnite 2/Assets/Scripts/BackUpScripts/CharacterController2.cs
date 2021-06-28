@@ -44,6 +44,7 @@ public class CharacterController2 : MonoBehaviour
         {
             Destroy(GetComponent<PlayerInput>());
             GetComponentInChildren<Camera>().enabled = false;
+            GetComponentInChildren<Canvas>().enabled = false;
             Destroy(rb);
             this.enabled = false;
             return;

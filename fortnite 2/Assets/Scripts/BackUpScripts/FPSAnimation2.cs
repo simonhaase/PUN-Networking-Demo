@@ -9,7 +9,6 @@ public class FPSAnimation2 : MonoBehaviour
 {
     private GameObject handL;
     private Animator anim;
-    public Animator enemyanim;
     private AnimatorStateInfo stateInfo;
 
     private ParticleSystem smoke;
@@ -17,7 +16,8 @@ public class FPSAnimation2 : MonoBehaviour
 
     public static bool finishedReloading = true;
 
-    public Text text;
+    [SerializeField] private Text bullets;
+    
     public Camera fpsCam;
 
     private PhotonView PV;
