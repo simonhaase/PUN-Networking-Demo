@@ -7,19 +7,16 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     private PhotonView PV;
+    GameObject controller;
 
     void Start()
     {
-        
+
         PV = GetComponent<PhotonView>();
         Debug.Log(PV.IsMine);
         if (PV.IsMine)
         {
             CreateControllerPlayer();
-        }
-        if (!PV.IsMine)
-        {
-            CreateControllerEnemy();
         }
     }
 
@@ -27,22 +24,14 @@ public class PlayerManager : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(0f, 8f, 0f), Quaternion.identity); //Instatiate Player                                                                                                                                //PhotonNetwork.InstantiateRoomObject(Path.Combine("PhotonPrefabs", "barrel"), new Vector3(0f, 8f, 0f), Quaternion.identity);
-        }
-        else if (!PV.IsMine)
-        {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player3rd"), new Vector3(0f, 8f, 0f), Quaternion.identity);
+            Transform spawnpoint = SpawnManager.Instance.GetSpawnpoint();
+            controller = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), spawnpoint.position, Quaternion.identity, 0, new object[] { PV.ViewID });
         }
     }
-    void CreateControllerEnemy()
+
+    public void Die()
     {
-        if (PV.IsMine)
-        {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), new Vector3(0f, 8f, 0f), Quaternion.identity); //Instatiate Player                                                                                                                                //PhotonNetwork.InstantiateRoomObject(Path.Combine("PhotonPrefabs", "barrel"), new Vector3(0f, 8f, 0f), Quaternion.identity);
-        }
-        else if (!PV.IsMine)
-        {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player3rd"), new Vector3(0f, 8f, 0f), Quaternion.identity);
-        }
+        PhotonNetwork.Destroy(controller);
+        CreateControllerPlayer();
     }
 }

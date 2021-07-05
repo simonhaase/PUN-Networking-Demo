@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f403bd036ef63846b375029b2c80519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0.013044614, y: -0.024728928, z: 0.023364427}
+  position: {x: -0.007289887, y: -0.024728933, z: -0.0021967134}
 --- !u!198 &279693297929012816
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -679,7 +679,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0.013044614, y: -0.024728928, z: 0.023364427}
+    m_Position: {x: -0.007289887, y: -0.024728933, z: -0.0021967134}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 0.2, y: 0.2, z: 0.2}
     placementMode: 0
