@@ -11,6 +11,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public static Launcher Instance;
 
     [SerializeField] TMP_InputField roomNameInputField;
+    [SerializeField] TMP_InputField nickName;
     [SerializeField] TMP_Text errorText;
     [SerializeField] TMP_Text roomNameText;
     [SerializeField] Transform roomListContent;
@@ -44,7 +45,6 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined Lobby");
         MenuManager.instance.OpenMenu("title");
-        PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000");
     }
 
     public void CreateRoom()
@@ -55,12 +55,13 @@ public class Launcher : MonoBehaviourPunCallbacks
         }
         PhotonNetwork.CreateRoom(roomNameInputField.text);
         MenuManager.instance.OpenMenu("loading");
+        SetUserName();
     }
 
     public override void OnJoinedRoom()
     {
         MenuManager.instance.OpenMenu("room");
-        roomNameText.text = PhotonNetwork.CurrentRoom.Name;
+        roomNameText.text = PhotonNetwork.CurrentRoom.Name;   
 
         foreach (Transform child in playerListContent)
         {
@@ -92,6 +93,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public void JoinRoom(RoomInfo info)
     {
         PhotonNetwork.JoinRoom(info.Name);
+        SetUserName();
         MenuManager.instance.OpenMenu("loading");
     }
 
@@ -115,7 +117,6 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             if (roomList[i].RemovedFromList)
                 continue;
-
             Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().SetUp(roomList[i]);
         }
     }
@@ -123,6 +124,14 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(newPlayer);
+    }
+
+    private void SetUserName()
+    {
+        if (string.IsNullOrEmpty(nickName.text))
+            PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000");
+        else
+            PhotonNetwork.NickName = nickName.text;
     }
 
     public void QuitApplication()

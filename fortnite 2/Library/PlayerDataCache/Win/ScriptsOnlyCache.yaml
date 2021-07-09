@@ -82,6 +82,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Slider
@@ -206,6 +207,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1766}
     - Class: 114
       Script: {instanceID: 1816}
+    - Class: 114
+      Script: {instanceID: 1872}
     - Class: 114
       Script: {instanceID: 1944}
     - Class: 114
@@ -2447,7 +2450,7 @@ ScriptsOnlyBuild:
     className: LookatTarget
   - hash:
       serializedVersion: 2
-      Hash: 04a90cc83d81288f4bf20823f84a394b
+      Hash: a487647e20db04a42ad41ef599152ea9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Launcher
