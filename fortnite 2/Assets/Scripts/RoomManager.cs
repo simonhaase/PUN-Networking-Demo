@@ -41,13 +41,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
     }
 
-    void Start()
+    public void QuitApplication()
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        PhotonNetwork.LeaveRoom();
+        Application.Quit();
     }
 }

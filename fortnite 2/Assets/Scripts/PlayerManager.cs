@@ -11,9 +11,8 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
-
         PV = GetComponent<PhotonView>();
-        Debug.Log(PV.IsMine);
+
         if (PV.IsMine)
         {
             CreateControllerPlayer();
@@ -34,4 +33,5 @@ public class PlayerManager : MonoBehaviour
         PhotonNetwork.Destroy(controller);
         CreateControllerPlayer();
     }
+
 }

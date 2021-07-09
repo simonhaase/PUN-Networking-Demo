@@ -1,5 +1,5 @@
 {
-    "name": "Input",
+    "name": "Inputsys",
     "maps": [
         {
             "name": "Player",
@@ -41,6 +41,14 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "c8ae3415-aa5b-4e00-b5de-9242f70b3d8c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "7939f9bc-1856-41cf-bbe0-2e36a3603d46",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -220,6 +228,17 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "45b26211-13e2-482e-acca-999b5e58f0fb",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
